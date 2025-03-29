@@ -30,9 +30,10 @@ services:
       - ./database/init-scripts:/docker-entrypoint-initdb.d
     healthcheck:
       test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P P@ssw0rd! -Q 'SELECT 1' || exit 1"]
-      interval: 10s
+      interval: 30s
       retries: 10
-      timeout: 3s
+      timeout: 5s
+      start_period: 60s
     networks:
       - web-security-network
 
@@ -50,18 +51,18 @@ services:
       - web-security-lab
 
   # Web Application Firewall for Day 5
-  waf:
-    image: owasp/modsecurity-crs:4.12.0-nginx-alpine-202503230103
-    ports:
-      - "8081:80"
-    environment:
-      - PARANOIA=1  # Start with low paranoia level for demonstration
-      - PROXY=1
-      - BACKEND=http://web-security-lab
-    networks:
-      - web-security-network
-    depends_on:
-      - web-security-lab
+  # waf:
+  #  image: owasp/modsecurity-crs:4.12.0-nginx-alpine-202503230103
+  #  ports:
+  #    - "8081:80"
+  #  environment:
+  #    - PARANOIA=1  # Start with low paranoia level for demonstration
+  #    - PROXY=1
+  #    - BACKEND=http://web-security-lab
+  #  networks:
+  #    - web-security-network
+  #  depends_on:
+  #    - web-security-lab
 
 networks:
   web-security-network:
