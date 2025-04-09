@@ -16,7 +16,7 @@ docker compose up -d web-security-lab
 
 # Generate a self-signed certificate for HTTPS exercises
 echo "Generating self-signed certificate for HTTPS exercises..."
-
+docker exec -i web-security-lab_web-security-lab_1 openssl req -new -newkey rsa:2048 -days 365 -nodes -x509 \
     -subj "/C=US/ST=State/L=City/O=Organization/CN=localhost" \
     -keyout /app/server.key -out /app/server.cert
 

@@ -17,6 +17,7 @@ docker compose up -d
 
 # Import a complete configuration with all vulnerabilities
 echo "Importing comprehensive vulnerable configuration..."
+docker exec -i web-security-lab-db /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "P@ssw0rd!" -d VulnerableApp -C -N -t 30 -b -e -i /docker-entrypoint-initdb.d/final-day-data.sql
 
 echo "Day 6 environment is ready!"
 echo "Access the vulnerable web application at: http://localhost:8080"

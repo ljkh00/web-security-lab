@@ -55,11 +55,6 @@ namespace VulnerableApp.Controllers
             return View();
         }
 
-        public IActionResult Register()
-        {
-            return View();
-        }
-
         [HttpPost]
         public IActionResult Register(string username, string password, string email, string fullName)
         {
