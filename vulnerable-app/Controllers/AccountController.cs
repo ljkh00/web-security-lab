@@ -54,6 +54,11 @@ namespace VulnerableApp.Controllers
             ViewBag.ErrorMessage = "Invalid login attempt";
             return View();
         }
+        
+        public IActionResult Register()
+        {
+            return View();
+        }
 
         [HttpPost]
         public IActionResult Register(string username, string password, string email, string fullName)

@@ -53,6 +53,7 @@ else
     // Missing security headers
     app.UseExceptionHandler("/Home/Error");
     // Missing HTTPS redirection
+    app.UseHsts();
 }
 
 // Missing security headers middleware

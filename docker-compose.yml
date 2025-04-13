@@ -40,12 +40,13 @@ services:
 
   # Security testing tools for Day 5
   security-tools:
+    container_name: web-security-lab-zap
     image: ghcr.io/zaproxy/zaproxy:stable
     volumes:
       - ./security-reports:/zap/wrk
     ports:
       - "8090:8080"  # ZAP API and UI
-    command: zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.disablekey=true
+    command: zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.disablekey=true -config api.ui.enabled=true
     networks:
       - web-security-network
     depends_on:
@@ -53,13 +54,14 @@ services:
 
   # Web Application Firewall for Day 5
   waf:
+    container_name: web-security-lab-waf
     image: owasp/modsecurity-crs:4.12.0-nginx-alpine-202503230103
     ports:
-      - "8081:80"
+      - "8081:8080"
     environment:
       - PARANOIA=1  # Start with low paranoia level for demonstration
       - PROXY=1
-      - BACKEND=http://web-security-lab
+      - BACKEND=http://web-security-lab-web:80
     networks:
       - web-security-network
     depends_on:

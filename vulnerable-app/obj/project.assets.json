@@ -2120,19 +2120,19 @@
     ]
   },
   "packageFolders": {
-    "/home/ljkhoo/.nuget/packages/": {}
+    "/home/student/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/ljkhoo/web-security-lab/vulnerable-app/VulnerableApp.csproj",
+      "projectUniqueName": "/home/student/day5-web/vulnerable-app/VulnerableApp.csproj",
       "projectName": "VulnerableApp",
-      "projectPath": "/home/ljkhoo/web-security-lab/vulnerable-app/VulnerableApp.csproj",
-      "packagesPath": "/home/ljkhoo/.nuget/packages/",
-      "outputPath": "/home/ljkhoo/web-security-lab/vulnerable-app/obj/",
+      "projectPath": "/home/student/day5-web/vulnerable-app/VulnerableApp.csproj",
+      "packagesPath": "/home/student/.nuget/packages/",
+      "outputPath": "/home/student/day5-web/vulnerable-app/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/ljkhoo/.nuget/NuGet/NuGet.Config"
+        "/home/student/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -2150,13 +2150,7 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.200"
+      }
     },
     "frameworks": {
       "net6.0": {
@@ -2208,7 +2202,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.202/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.115/RuntimeIdentifierGraph.json"
       }
     }
   },
